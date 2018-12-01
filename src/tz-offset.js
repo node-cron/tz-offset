@@ -1,9 +1,10 @@
+'use strict'
 const offsets = require("../generated/offsets");
 
 module.exports = (function () {
 
     function offsetOf(timezone) {
-        let offset = offsets[timezone];
+        const offset = offsets[timezone];
         if (offset != undefined && offset != null) {
             return offset;
         } else {
@@ -12,13 +13,13 @@ module.exports = (function () {
     }
 
     function removeOffset(date) {
-        let currentOffset = date.getTimezoneOffset() * -60000;
+        const currentOffset = date.getTimezoneOffset() * -60000;
         return date.getTime() - currentOffset;
     }
 
     function timeAt(date, timezone) {
-        let timeUtc = removeOffset(date);
-        let offset = offsetOf(timezone) * -60000;
+        const timeUtc = removeOffset(date);
+        const offset = offsetOf(timezone) * -60000;
         return new Date(timeUtc + offset);
     }
 
