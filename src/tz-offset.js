@@ -1,4 +1,4 @@
-var offsets = require("../generated/offsets");
+var offsets = require("../generated/offsets.json");
 
 module.exports = (function() {
     
