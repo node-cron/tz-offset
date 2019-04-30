@@ -1,7 +1,8 @@
-let tzOffset = require("../src/tz-offset");
-let {assert} = require("chai");
+'use strict'
+const tzOffset = require("../src/tz-offset");
+const { assert } = require("chai");
 
-process.env.TZ= "America/Sao_Paulo";
+process.env.TZ = "America/Sao_Paulo";
 
 describe("tz-offset", () => {
     it("should return 180 to America/Sao_Paulo", () => {
@@ -23,16 +24,15 @@ describe("tz-offset", () => {
     });
 
     it("should remove current offset", () => {
-        let date = new Date();
-        utcTime = tzOffset.removeOffset(date);
+        const date = new Date();
+        const utcTime = tzOffset.removeOffset(date);
         assert.equal(utcTime, date.getTime() + date.getTimezoneOffset() * 60000);
     });
 
     it("should return the time at zone", () => {
-        let date = new Date(2018, 8, 20, 0, 0, 0, 0);
-        let expectedDate = new Date(2018, 8, 20, 3, 0, 0, 0);
-        result = tzOffset.timeAt(date, "Etc/UTC");
-        console.log(result);
+        const date = new Date(2018, 8, 20, 0, 0, 0, 0);
+        const expectedDate = new Date(2018, 8, 20, 3, 0, 0, 0);
+        const result = tzOffset.timeAt(date, "Etc/UTC");
         assert.equal(result.toString(), expectedDate.toString());
     });
 });
