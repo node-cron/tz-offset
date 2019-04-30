@@ -1,5 +1,5 @@
 'use strict'
-const offsets = require("../generated/offsets");
+const offsets = require("../generated/offsets.json");
 
 module.exports = (() => {
 
