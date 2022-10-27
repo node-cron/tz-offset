@@ -2,9 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     thread_safe (0.3.6)
-    tzinfo (1.2.5)
+    tzinfo (2.0.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.5)
+    tzinfo-data (1.2022.5)
       tzinfo (>= 1.0.0)
 
 PLATFORMS
